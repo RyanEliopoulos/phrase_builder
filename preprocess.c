@@ -3,10 +3,11 @@
 
 int isignored(char);
 
+//function takes an ASCII encoded integer and returns the corresponding value based upon the given rules: Whitespace is converted to a single space, alphabetic characters are converted to uppercase, and parentheses, quotes, and dashes are are all ignored
 char preprocess(int c){
 	
 	char d = c;
-	printf("%c is what d is\n", d);
+//	printf("%c is what d is\n", d);
 
 	if(isspace(c)){
 		return ' ';
@@ -17,7 +18,7 @@ char preprocess(int c){
 		return d;	
 	}
 	if(isignored(d)){
-		printf("That is an ignored characters\n");
+//		printf("That is an ignored characters\n");
 		return;
 	}
 }
