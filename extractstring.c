@@ -39,8 +39,10 @@ void main(){
 				phraseStarted = 0;
 				//string.append(c)
 				printf("\\\\Phrase has endeded \\\\\n");
+				
 				//from buildphrase.c. Debugging strings
 				addCharacter(c);
+				addTerminator();
 				printString();
 			}
 			//If the last thing typed before pressing enter is a phrase ending character, there must be a carriage return or something read afterward that gets read after the phrase ends. Here lies that whitespace. RIP
