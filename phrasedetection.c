@@ -1,8 +1,6 @@
 #include<stdio.h>
 #include<ctype.h>
 
-// note: Will have to account for the 001 that is returned from preprocess when the character is an ignored value
-//
 
 //If the argument matches a list of phrase ending characters, the function returns 1, otherwise returns 0;
 int isphraseender(char c){

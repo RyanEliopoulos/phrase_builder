@@ -7,7 +7,6 @@ int isignored(char);
 char preprocess(int c){
 	
 	char d = c;
-//	printf("%c is what d is\n", d);
 
 	if(isspace(c)){
 		return ' ';
