@@ -16,12 +16,7 @@ char preprocess(int c){
 		d = toupper(c);
 		return d;	
 	}
-	//Should modify this so it returns a flag that will be ignored when writing characters to the temporary string
-	if(isignored(d)){
-//		printf("That is an ignored characters\n");
-		return;
-	}
-	//if c does not trigger any above statements it is returned as a char
+	
 	return d;
 }
 
