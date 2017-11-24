@@ -11,7 +11,6 @@ void main(){
 	while(c != EOF){
 	
 		//preprocesses c: screens for ignore characters, all whitespace = 1 space, and all alpha characters are returned capitalized
-	
 		c = preprocess(c);
 			
 		printf("%c   %d\n ", c, c);				
