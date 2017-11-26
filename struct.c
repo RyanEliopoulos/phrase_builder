@@ -3,6 +3,8 @@
 
 void printPhraseList();
 
+
+//data structure that tracks unique phrases and their occurences
 typedef struct{
 
 	char phraseText[201];
@@ -12,6 +14,8 @@ typedef struct{
 
 Phrase phraseList[1000];
 
+
+//
 int phraseCount = 0;
 
 
@@ -22,11 +26,7 @@ void receiveString(char* inputString){
 	strcpy(phraseList[phraseCount].phraseText, inputString);
 	phraseCount++;	
 
-	printf("<%s>\n", inputString);
-
-	//Need to figure out what to do with this fnx
-//	printPhraseList();	
-	
+//	Attempting to search through data struct and determine if a phrase is a match	
 	//int j = 0;
 
 	//search through struct list for a phrase match (testing/writing)
@@ -46,16 +46,13 @@ void receiveString(char* inputString){
 //	}	
 
 	
-//	printf("the string of phraseList[0] is %s\n", phraseList[0].phraseText);
-//	printf("the string of phraseList[3] is %s\n", phraseList[3].phraseText);
-//	printf("the first char of phraseList[4] is %c\n", phraseList[4].phraseText[0]);
 }
 
-
+//Iterates through the list of phrases and prints the phraseText of each one
 void printPhraseList(){
 	
 	for(int p = 0;p<phraseCount;p++){
-		printf("inside print phrase list\n");
+		
 		printf("<%s>\n", phraseList[p].phraseText);
 	}
 

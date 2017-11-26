@@ -17,33 +17,26 @@ void main(){
 		//preprocesses c: screens for ignore characters, all whitespace = 1 space, and all alpha characters are returned capitalized
 		c = preprocess(c);
 			
-		//printf("%c   %d\n ", c, c);				
 		//skips processing c should it be an ignored character
 		if(!isignored(c)){
+			
 			//Determines if c begins a new phrase
 			if((isphrasebeginner(c)) && (!phraseStarted)){
 				
 				phraseStarted = 1;
-//				printf("\\\\Beginning phrase \\\\\n");
-//				printf("%c", c);
-				//string.append(c)
 				addCharacter(c);
 			}
+			
 			//Determines if c continues the current phrase
 			else if((phraseStarted) && (!isphraseender(c))){
-				//Accounts for the empty return preprocess gives when the character is to be ignored
-//				printf("inside phrase continue\n");
-//				printf("%c", c);	
-				//string.append(c)
+				
 				addCharacter(c);
 			}
+
 			//Determines if c ends the current phrase
 			else if(isphraseender(c)){
-				phraseStarted = 0;
-				//string.append(c)
-//				printf("\\\\Phrase has endeded \\\\\n");
 				
-				//from buildphrase.c. Debugging strings
+				phraseStarted = 0;
 				addCharacter(c);
 				addTerminator();
 			}
@@ -59,8 +52,8 @@ void main(){
 		//retrieves next character for analysis
 		c = fgetc(stdin);
 	}	
-	//Temp quarintine while I figure out whats up with the buildphrace.c	
-//	printStringlist();
+	
+	//prints out the phraseText for all structs in our data structure
 	printPhraseList();	
 
 }
