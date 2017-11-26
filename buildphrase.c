@@ -1,8 +1,6 @@
 #include<stdio.h>
 #include"pa5.h"
 
-//The phrases are correctly held in the temporary string. Now need to figure out how to copy the string into the data structure (11/25/2017)
-//copying the contents from tempString into a debugList works just fine. So Something was going wrong when I was trying to copy the strings into the data structure
 
 char* phraseList[1000];
 
@@ -36,12 +34,17 @@ void addTerminator(){
 	}
 
 	//prints tempString, then resets its index for future use.	
-	printString();
-	printf("\n\nPhrase ended\n\n");
+//	printString();
+//	printf("\n\nPhrase ended\n\n");
 	tempStringIndex = 0;
+
+	//sends tempString to be copied into the data structure
 	receiveString(tempString);
-	//Put a call here to a function that takes tempString as the argument and embeds that string
-	//into the struct phrase
+
+
+
+	//Everything commented below here is probably good to be removed
+
 
 	//debugging - trying to figure out how to copy into a list of strings (if possible).	
 //	if(flag == 0){

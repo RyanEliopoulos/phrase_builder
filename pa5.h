@@ -1,0 +1,11 @@
+int isignored(char);
+char preprocess(int c);
+int isphraseender(char);
+int isphrasebeginner(char);
+void addCharacter(char);
+void addTerminator();
+void printString();
+void printStringlist();
+void transcribeString();
+void receiveString();
+void printPhraseList();

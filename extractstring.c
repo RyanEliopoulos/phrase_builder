@@ -1,12 +1,17 @@
 #include<stdio.h>
 #include"pa5.h"
 
+
+//will need to remember to change this
 void main(){
 
 	int c;
 	c = fgetc(stdin);
+	
+	//flag indicating a phrase is in progress if 1
 	int phraseStarted = 0;
 
+	//Continues processing input until EOF is reached.
 	while(c != EOF){
 	
 		//preprocesses c: screens for ignore characters, all whitespace = 1 space, and all alpha characters are returned capitalized
@@ -44,7 +49,7 @@ void main(){
 			}
 			//If the last thing typed before pressing enter is a phrase ending character, there must be a carriage return or something read afterward that gets read after the phrase ends. Here lies that whitespace. RIP
 			else if(c == ' '){
-				printf("c is a rebel without  cause\n");
+			//	printf("c is a rebel without  cause\n");
 			}
 			//uh oh
 			else{
@@ -56,5 +61,7 @@ void main(){
 	}	
 	//Temp quarintine while I figure out whats up with the buildphrace.c	
 //	printStringlist();
+	printPhraseList();	
+
 }
 
