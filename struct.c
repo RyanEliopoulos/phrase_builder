@@ -2,7 +2,7 @@
 #include<string.h>
 
 void printPhraseList();
-
+void swap(int);
 
 //data structure that tracks unique phrases and their occurences
 typedef struct{
@@ -27,18 +27,14 @@ void receiveString(char* inputString){
 	//search through struct list for a phrase match (testing/writing)
 	while((j < phraseCount) && (searchContinues)){
 	
-//		printf("inside struct search loop 1\n");	
 		int i = 0;
 		
 		//continues iterating over the phrases as long as they match	
 		while((inputString[i] == phraseList[j].phraseText[i]) && (searchContinues)){
 
-//			printf("inside struct search loop 2\n");
-
 			//Increments phraseList[j].count if the inputString is found to match.
 			if(inputString[i] == '\0'){
-//				printf("We've got a match!\n");
-//				printf("%s matches %s\n", inputString, phraseList[j].phraseText); 
+				
 				phraseList[j].count = phraseList[j].count + 1;
 				searchContinues = 0;
 			}
@@ -60,10 +56,60 @@ void receiveString(char* inputString){
 
 		//Sets count value of new phrase to 1 instead of 0;
 		phraseList[phraseCount].count++;
+
 		phraseCount++;
 		}
 	}
 }	
+
+
+void sortPhraseList(){
+
+	//flag indicating the sorting is still in progress
+	int sorting = 1;	
+
+	while(sorting){
+
+		//Indicates sorting is finished unless a swap takes place
+		sorting = 0;
+
+		//Compares each phrase with the one after it (bubble sorting)
+		for(int i = 0;i<(phraseCount-1);i++){
+			
+			if(strlen(phraseList[i].phraseText) > strlen(phraseList[i+1].phraseText)){
+
+				//swaps the informations of phraseList[i] and phraseList[i+1]
+				swap(i);
+				
+				//flags sort as in process
+				sorting = 1;
+	
+			}
+		}
+	}
+}
+
+void swap(int swapIndex){
+
+	char tempPhrase[201];
+	int tempCount;
+
+	//moves info to temp variables
+	strcpy(tempPhrase, phraseList[swapIndex].phraseText);
+	tempCount = phraseList[swapIndex].count;	
+	
+
+	//moves second phrase up one
+	strcpy(phraseList[swapIndex].phraseText, phraseList[swapIndex+1].phraseText);
+	phraseList[swapIndex].count = phraseList[swapIndex+1].count;
+
+
+	//moves the first phrase down one
+	strcpy(phraseList[swapIndex+1].phraseText, tempPhrase);
+	phraseList[swapIndex+1].count = tempCount;
+
+
+}
 
 
 //Iterates through the list of phrases and prints the phraseText and occurence count of each

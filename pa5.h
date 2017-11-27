@@ -9,3 +9,4 @@ void printStringlist();
 void transcribeString();
 void receiveString();
 void printPhraseList();
+void sortPhraseList();

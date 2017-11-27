@@ -54,7 +54,12 @@ void main(){
 	}	
 	
 	//prints out the phraseText for all structs in our data structure
-	printPhraseList();	
-
+//	printPhraseList();	
+	
+	//testing sort function
+	sortPhraseList();
+	
+	//checking sorted list
+	printPhraseList();
 }
 
